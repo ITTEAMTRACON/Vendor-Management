@@ -1,0 +1,240 @@
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px transparent;
+  border-radius: 50%;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #696CFF;
+  border-radius: 10px;
+}
+
+.headbar {
+  color: #fff;
+  width: 100%;
+  border-bottom: 1px solid rgba(13, 76, 132, 0.80);
+  background: rgba(13, 76, 132, 0.80);
+  box-shadow: 0px 2px 20px 1px rgba(0, 0, 0, 0.25);
+  padding: 10px;
+  margin: auto;
+
+  .title {
+    margin: 10px 0;
+    height: 100%;
+    font-weight: 800;
+    font-size: 24px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Rockwell Extra Bold;
+    // line-height: normal;
+  }
+
+  .auth {
+    margin: 15px 0;
+    height: 100%;
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: right
+  }
+}
+
+#wrapper{
+  position: relative;
+}
+
+aside, .main {
+  border-right: 1px solid #0D4C84;
+  background: #0D4C84;
+  width: 13vw;
+  height: 100% !important;
+  min-height: 100vh;
+  max-width: 100% !important;
+  color: #fff;
+  position: absolute;
+
+  .menu {
+    padding: 15px;
+    border-bottom: 1px solid rgba(13, 76, 132, 0.80);
+    background: rgba(97, 140, 177, 0.8) !important;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+  }
+
+  svg {
+    margin-right: 15px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+.container-style {
+  padding-left: 15vw;
+  padding-top: 4vh;
+  padding-right: 2vw;
+
+  header {
+    border-bottom: 1px solid #CFCFCF;
+    padding-bottom: 2vh;
+    padding-top: 2vh;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #000;
+    font-family: Roboto;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+
+  }
+}
+
+.btn-add {
+  border-radius: 5px;
+  border: 1px solid #4CAE4C;
+  background: #5CB85C;
+  color: #fff;
+}
+
+table {
+  th {
+    text-align: center !important
+  }
+
+  ;
+
+
+  td {
+    text-align: center !important;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+    /* 128.571% */
+  }
+
+  td[value="DRAFT"] {
+    color: #FBC916;
+  }
+
+  td[value="REJECTED"] {
+    color: #FF4141;
+  }
+
+  td[value="WAITING FOR REVIEW"] {
+    color: #76A4DA;
+  }
+
+  td[value="APPROVED"] {
+    color: #41A941;
+  }
+
+  td.action {
+    margin: auto;
+    display: flex;
+
+    div {
+      display: flex;
+      margin: auto;
+      gap: 10px;
+    }
+  }
+
+
+}
+
+.progress-graph {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  min-height: 10vh;
+  padding: auto;
+  margin: auto;
+
+  div {
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    margin: auto;
+    min-height: 1vh;
+    display: inline-block;
+    margin-top: 0 !important;
+  }
+
+  // width: 100vw;
+
+
+
+  .circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+    background-color: gray;
+    float: left;
+    position: relative;
+
+    .title {
+      color: #000;
+      text-align: center;
+      font-family: Inter;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 700;
+      top: 25px;
+      position: absolute;
+      font-weight: bold;
+      width: 200px !important;
+      left: -85px;
+    }
+
+    .desc {
+      top: 45px;
+      text-align: center;
+      color: #000;
+      font-family: Inter;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 18px;
+      position: absolute;
+      width: 200px !important;
+      left: -85px;
+
+
+    }
+  }
+
+  .line {
+    margin-top: 9px;
+    width: 25vw;
+    height: 5px;
+    background-color: gray;
+    float: left;
+  }
+
+  .active{
+    background-color: #6DC05F;
+  }
+
+
+}

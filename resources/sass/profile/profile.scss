@@ -1,0 +1,45 @@
+.card.profile {
+    padding: 0;
+
+    .nav-menu {
+        display: flex;
+        text-align: center;
+
+        .nav-item {
+            padding: 5px;
+            cursor: pointer;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+
+            &.active {
+                color: white;
+                background-color: #0D4C84;
+            }
+        }
+
+
+    }
+
+    form {
+        padding: 10px;
+
+        .form-group {
+            margin-bottom: 10px;
+
+            label {
+                text-align: right;
+                font-weight: 500;
+            }
+
+            input[type=number] {
+                -moz-appearance: textfield;
+            }
+
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+        }
+    }
+}

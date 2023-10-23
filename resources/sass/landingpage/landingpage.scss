@@ -1,4 +1,4 @@
-.headbar{
+.headbar {
     opacity: 0.9;
     position: absolute;
     top: 0;
@@ -91,18 +91,23 @@ label {
 
 label[for="clubs"] {
     background-image: url('/public/images/20230802_085445.jpg');
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
 }
 
 label[for="hearts"] {
     background-image: url('/public/images/20230802_100345.jpg');
+    font-family: 'Courier New', Courier, monospace;
 }
 
 label[for="spades"] {
     background-image: url('/public/images/20230802_100526.jpg');
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 label[for="diamonds"] {
     background-image: url('/public/images/20230802_102450.jpg');
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 label:before,
@@ -135,4 +140,17 @@ label:after {
     left: 100%;
     border-top-right-radius: 50%;
     border-bottom-right-radius: 50%;
+}
+
+.carousels label {
+    img {
+        display: inline;
+        margin-bottom: 10px;
+        opacity: 0.4;
+    }
+    span{
+        opacity: 0.4;
+        font-weight: 1000;
+        text-shadow: 2px 2px #FF0000;
+    }
 }

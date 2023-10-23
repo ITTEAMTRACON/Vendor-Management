@@ -10,7 +10,7 @@
             Pre-Qualification
         </header>
 
-        <button class="btn btn-add">Add New Pre-Qualification</button>
+        <a class="btn btn-add" href="{{ route('prequalification.store') }}">Add New Pre-Qualification</a>
         <br>
         <br>
 
@@ -27,14 +27,44 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <?php $i = 1; ?>
+                        @foreach ($session as $row)
+                            <tr>
+                                <td>{{ $i++ }}</td>
+                                <td>{{ $row->SESSION_CREATED_AT }}</td>
+                                @if($row->SESSION_STATUS==null)
+                                    <td value="WAITING FOR REVIEW">WAITING FOR REVIEW</td>
+                                @elseif($row->SESSION_STATUS == "REJECTED")
+                                    <td value="REJECTED">REJECTED</td>
+                                @elseif($row->SESSION_STATUS == "APPROVED")
+                                    <td value="APPROVED">APPROVED</td>
+                                @else
+                                    <td value="-">-</td>
+                                @endif
+                                <td>@if($row->SESSION_UPDATE_AT == NULL){{ $row->SESSION_CREATED_AT }}@else{{ $row->SESSION_UPDATE_AT }}@endif</td>
+                                <td class="action">
+                                    <div>
+                                        @if($row->SESSION_STATUS==null)
+                                            <a href="{{ route('prequalification.detail', $row->SESSION_UUID) }}"><x-svg.eye /></a>
+                                        @elseif($row->SESSION_STATUS=="REJECTED")
+                                            <a href="{{ route('prequalification.detail', $row->SESSION_UUID) }}"><x-svg.edit /></a>
+                                            <a href="#delete"><x-svg.delete /></a>
+                                        @elseif($row->SESSION_STATUS=="APPROVED")
+                                            <a href="{{ route('prequalification.detail', $row->SESSION_UUID) }}"><x-svg.eye /></a>
+                                        @endif
+                                
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforeach
+                        {{-- <tr>
                             <td>1</td>
                             <td>22 Ap 2020</td>
                             <td value="DRAFT">DRAFT</td>
                             <td>02 Jun 2020 | 11:32</td>
                             <td class="action">
                                 <div>
-                                    <a href="#edit"><x-svg.edit /></a> 
+                                    <a href="#edit"><x-svg.edit /></a>
                                     <a href="#delete"><x-svg.delete /></a>
                                 </div>
                             </td>
@@ -46,7 +76,7 @@
                             <td>02 Jun 2020 | 11:32</td>
                             <td class="action">
                                 <div>
-                                    <a href="#edit"><x-svg.edit /></a> 
+                                    <a href="#edit"><x-svg.edit /></a>
                                     <a href="#delete"><x-svg.delete /></a>
                                 </div>
                             </td>
@@ -58,7 +88,7 @@
                             <td>02 Jun 2020 | 11:32</td>
                             <td class="action">
                                 <div>
-                                    <a href="#edit"><x-svg.eye /></a> 
+                                    <a href="#edit"><x-svg.eye /></a>
                                 </div>
                             </td>
                         </tr>
@@ -69,10 +99,10 @@
                             <td>02 Jun 2020 | 11:32</td>
                             <td class="action">
                                 <div>
-                                    <a href="{{route('prequalification.detail')}}"><x-svg.eye /></a> 
+                                    <a href="{{ route('prequalification.detail') }}"><x-svg.eye /></a>
                                 </div>
                             </td>
-                        </tr>
+                        </tr> --}}
                     </tbody>
                     {{-- <tfoot>
                         <tr>

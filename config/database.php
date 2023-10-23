@@ -100,6 +100,25 @@ return [
             'username' => 'sa',
             'password' => env('DB_PASSWORD', ''),
             'prefix'   => '',
+        ],
+
+        // 'VENDORMANAGEMENT' => [
+        //     'driver'   => 'sqlsrv',
+        //     'host'     => 'DESKTOP-RSJFGJB',
+        //     'database' => 'VENDORMANAGEMENT',
+        //     'username' => '',
+        //     'password' => '',
+        //     'prefix'   => '',
+        // ],
+
+
+        'SURVEY' => [
+            'driver'   => 'sqlsrv',
+            'host'     =>  env('DB_HOST', 'localhost'),
+            'database' => 'SURVEY',
+            'username' => 'sa',
+            'password' => env('DB_PASSWORD', ''),
+            'prefix'   => '',
         ]
 
     ],

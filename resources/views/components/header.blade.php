@@ -6,9 +6,9 @@
             </div>
             <div class="auth col-md-6">
                 <a href="{{ route('login') }}" style="margin-right: 47px">Welcome,
-                    {{ Auth::user()->MEMBER_COMPANY_NAME }}</a>
+                    {{ Auth::user()->vendor->VM_NAME }}</a>
 
-                <a href="{{ route('login') }}" style="margin-right: 47px">Change Password</a>
+                <a href="{{ route('password.view') }}" style="margin-right: 47px">Change Password</a>
 
                 <form method="POST" action="{{ route('logout') }}" style="display: contents">
                     @csrf

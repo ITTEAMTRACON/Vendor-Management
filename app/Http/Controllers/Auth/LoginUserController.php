@@ -13,6 +13,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
+use Auth as Authentification;
 
 
 
@@ -25,10 +26,23 @@ class LoginUserController extends Controller
             'password' => ['required', 'string', 'max:6'],
         ]);
 
-        $user = User::where("MEMBER_EMAIL",$request->email)->first();
+        $user = User::join('VENDORMANAGEMENT.dbo.VENDOR as VENDOR','VENDOR.VM_MEMBER_UUID','=','MEMBER_UUID')->where("MEMBER_EMAIL",$request->email)->where("MEMBER_STATUS",1)->first();
+        if(empty($user)){
+            $user = User::where("MEMBER_EMAIL",$request->email)->where("MEMBER_STATUS",NULL)->first();
+            if(!empty($user)){
+                return back()->with('error','Your account has not been confirmed by our admin. Please wait !');
+            }
 
+            $user = User::where("MEMBER_EMAIL",$request->email)->where("MEMBER_STATUS",0)->first();
+            if(!empty($user)){
+                return back()->with('error','Sorry! Your account was rejected');
+            }
+        }
+        // dd($user);
         if ($user && Hash::check($request->password, $user->MEMBER_PASSWORD)  ) {
             Auth::login($user);
+            $user->MEMBER_LAST_LOGIN =  date('Y-m-d H:i:s');
+            $user->save();
             return redirect(RouteServiceProvider::HOME);
         }else{
             throw ValidationException::withMessages([
@@ -39,7 +53,7 @@ class LoginUserController extends Controller
     }
 
     public function send_auth(){
-        $auth = Auth::user();
+        $auth = Authentification::user();
         return $auth;
     }
 }

@@ -15,6 +15,12 @@
   border-radius: 10px;
 }
 
+select {
+  -moz-appearance: auto !important;
+  -website-appearance: auto !important;
+  appearance: auto !important;
+}
+
 .headbar {
   color: #fff;
   width: 100%;
@@ -47,11 +53,12 @@
   }
 }
 
-#wrapper{
+#wrapper {
   position: relative;
 }
 
-aside, .main {
+aside,
+.main {
   border-right: 1px solid #0D4C84;
   background: #0D4C84;
   width: 13vw;
@@ -232,9 +239,61 @@ table {
     float: left;
   }
 
-  .active{
+  .active {
     background-color: #6DC05F;
   }
 
+  .rejected .active {
+    background-color: red;
+  }
 
+}
+
+.badge-message-success {
+  width: 100%;
+  background-color: #198754;
+  padding: 10px;
+  color: white;
+  font-weight: 600;
+}
+
+.badge-message-failed {
+  width: 100%;
+  background-color: red;
+  padding: 10px;
+  color: white;
+  font-weight: 600;
+}
+
+.animationTemporaryShow{
+  animation: temporaryShow 10s both;
+}
+
+@keyframes temporaryShow {
+  0% {
+    opacity: 1;
+    max-height: 100px;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+
+  90%{
+    opacity: 0;
+    max-height: 100%;
+    padding: 10px
+  }
+
+  100% {
+    opacity: 0;
+    max-height: 0px;
+    padding: 0;
+
+  }
+}
+
+.form-group {
+  margin-bottom: 10px;
 }

@@ -1,14 +1,14 @@
 @extends('index')
-@section('title', 'Detail - Pre-Qualification')
+@section('title', 'Detail - QHSE')
 
 @section('main_container')
 @include('components.header')
 @include('components.sidebar')
-    @vite(['resources/js/prequalification/prequalification.js'])
+    @vite(['resources/js/qhse/qhse.js'])
 
     <div class="container-style">
         <header>
-            Pre-Qualification Detail
+            QHSE Detail
         </header>
 
         <div class="progress-graph">

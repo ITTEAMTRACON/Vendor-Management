@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-   
+
 
     @hasSection('title')
         <title>@yield('title')</title>
@@ -24,12 +24,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
     </script>
-    <script src="/js/code.jquery.com_jquery-3.7.1.slim.js"
-        integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/datatables/DataTables/datatables.css" />
- 
-    <script src="/datatables/DataTables/datatables.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <link rel="stylesheet" href="datatables/DataTables/datatables.css" />
+
+    <script src="datatables/DataTables/datatables.js"></script>
+    @yield('script_link')
+
     @vite(['resources/sass/style.scss', 'resources/js/app.js'])
+
     <!-- Styles -->
     <style>
         /* ! tailwindcss v3.2.4 | MIT License | https://tailwindcss.com */
@@ -148,11 +150,11 @@
         [type=button],
         [type=reset],
         [type=submit],
-        button {
+        /* button {
             -webkit-appearance: button;
             background-color: transparent;
             background-image: none
-        }
+        } */
 
         :-moz-focusring {
             outline: auto
@@ -861,5 +863,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
 </script>
+@yield('script_js')
 
 </html>

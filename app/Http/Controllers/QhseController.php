@@ -21,7 +21,7 @@ class QhseController extends Controller
         $crypt_last_login = $CryptController->cryptString(Auth::user()->MEMBER_LAST_LOGIN);
         
         $SESSION_UUID = $request->SESSION_UUID;
-        $SESSION = DB::Connection('SURVEY')->table('SESSION')->where('SESSION_UUID',$request->SESSION_UUID)->first();
+        $SESSION = DB::Connection('SURVEY')->table('SESSION')->join('SURVEY','SURVEY_UUID','=','SESSION_SURVEY_UUID')->where('SESSION_UUID',$request->SESSION_UUID)->first();
 
         return view('qhse.qhse-detail', compact('SESSION_UUID','SESSION','crypt_email','crypt_last_login'));
     }

@@ -27,8 +27,8 @@ class PrequalificationController extends Controller
         
         $SESSION_UUID = $request->SESSION_UUID;
         $SESSION = DB::Connection('SURVEY')->table('SESSION')->join('SURVEY','SURVEY_UUID','=','SESSION_SURVEY_UUID')->where('SESSION_UUID',$request->SESSION_UUID)->first();
-
-        return view('prequalification.prequalification-detail', compact('SESSION_UUID','SESSION','crypt_email','crypt_last_login'));
+        $approval_history = DB::connection('VENDORMANAGEMENT')->table('APPROVAL')->where('APR_RELATION_ID',$request->SESSION_UUID)->orderby('APR_ORDER','asc')->get();
+        return view('prequalification.prequalification-detail', compact('SESSION_UUID','SESSION','crypt_email','crypt_last_login','approval_history'));
     }
 
     function store(){

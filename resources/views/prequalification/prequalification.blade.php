@@ -32,7 +32,7 @@
                             <tr>
                                 <td>{{ $i++ }}</td>
                                 <td>{{ $row->SESSION_CREATED_AT }}</td>
-                                @if($row->SESSION_STATUS==null)
+                                @if($row->SESSION_STATUS==null  || $row->SESSION_STATUS == "WAITING FOR REVIEW")
                                     <td value="WAITING FOR REVIEW">WAITING FOR REVIEW</td>
                                 @elseif($row->SESSION_STATUS == "REJECTED")
                                     <td value="REJECTED">REJECTED</td>
@@ -44,7 +44,7 @@
                                 <td>@if($row->SESSION_UPDATE_AT == NULL){{ $row->SESSION_CREATED_AT }}@else{{ $row->SESSION_UPDATE_AT }}@endif</td>
                                 <td class="action">
                                     <div>
-                                        @if($row->SESSION_STATUS==null)
+                                        @if($row->SESSION_STATUS==null || $row->SESSION_STATUS == "WAITING FOR REVIEW")
                                             <a href="{{ route('prequalification.detail', $row->SESSION_UUID) }}"><x-svg.eye /></a>
                                         @elseif($row->SESSION_STATUS=="REJECTED")
                                             <a href="{{ route('prequalification.detail', $row->SESSION_UUID) }}"><x-svg.edit /></a>

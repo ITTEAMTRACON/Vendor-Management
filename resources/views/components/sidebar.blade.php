@@ -29,7 +29,7 @@
         </svg>
         Profile
     </a>
-    <a class="menu {{(request()->is('pre-qualification*')) ? 'active' : ''}}"" href="{{route('prequalification.index')}}">
+    <a class="menu {{(request()->is('pre-qualification*')) ? 'active' : ''}}" href="{{route('prequalification.index')}}">
         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
             <g clip-path="url(#clip0_115_138)">
                 <path
@@ -44,7 +44,7 @@
         </svg>
         Pre-Qualification
     </a>
-    <a class="menu {{(request()->is('qhse*')) ? 'active' : ''}}"" href="{{route('qhse.index')}}">
+    <a class="menu {{(request()->is('qhse*')) ? 'active' : ''}}" href="{{route('qhse.index')}}">
         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
             <path
                 d="M7.5 1.25L2.5 3.125V6.93125C2.5 10.0875 4.63125 13.0312 7.5 13.75C10.3688 13.0312 12.5 10.0875 12.5 6.93125V3.125L7.5 1.25ZM7.5 10.625C5.775 10.625 4.375 9.225 4.375 7.5C4.375 5.775 5.775 4.375 7.5 4.375C9.225 4.375 10.625 5.775 10.625 7.5C10.625 9.225 9.225 10.625 7.5 10.625ZM8.53125 8.96875L7.1875 7.625V5.625H7.8125V7.36875L8.96875 8.525L8.53125 8.96875Z"

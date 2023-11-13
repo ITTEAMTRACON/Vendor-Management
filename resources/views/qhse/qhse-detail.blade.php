@@ -32,8 +32,8 @@
                         {{-- <span class="desc">Project Control</span> --}}
                     </span>
                     <span class="line active"></span>
-                    {{-- <span class="circle active"><span class="title">Rejected</span> --}}
-                    {{-- <span class="desc">Progress Control Manager</span> --}}
+                    <span class="circle active"><span class="title">Waiting for Review</span>
+                        {{-- <span class="desc">Progress Control Manager</span> --}}
                     </span>
                     <span class="line active"></span>
                     <span class="circle active"><span class="title">Approved</span>
@@ -61,10 +61,10 @@
 
         <div class="card" style="height: 100vh">
             <div class="card-body" style="height: 100vh">
-                {{-- <iframe src="https://tumbler.tracon.co.id/answer-detail/{{$SESSION->SURVEY_SLUG}}/{{$crypt_email}}/{{$crypt_last_login}}/{{ $SESSION_UUID }}" name="iframe" style="width: 100%; height: 100%"></iframe> --}}
-                <iframe
+                <iframe src="https://tumbler.tracon.co.id/answer-detail/{{$SESSION->SURVEY_SLUG}}/{{$crypt_email}}/{{$crypt_last_login}}/{{ $SESSION_UUID }}" name="iframe" style="width: 100%; height: 100%"></iframe>
+                {{-- <iframe
                     src="http://localhost:5174/answer-detail/{{ $SESSION->SURVEY_SLUG }}/{{ $crypt_email }}/{{ $crypt_last_login }}/{{ $SESSION_UUID }}"
-                    name="iframe" style="width: 100%; height: 100%"></iframe>
+                    name="iframe" style="width: 100%; height: 100%"></iframe> --}}
             </div>
         </div>
 
@@ -83,7 +83,7 @@
                         <tr>
                             <td>{{ $row->APR_APPROVED_BY_NAME }}</td>
 
-                            @if ($row->APR_STATUS == null || $row->APR_STATUS == "WAITING FOR REVIEW")
+                            @if ($row->APR_STATUS == null || $row->APR_STATUS == 'WAITING FOR REVIEW')
                                 <td value="WAITING FOR REVIEW">WAITING FOR REVIEW</td>
                             @elseif($row->APR_STATUS == 'REJECTED')
                                 <td value="REJECTED">REJECTED</td>

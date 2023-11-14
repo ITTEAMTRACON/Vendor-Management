@@ -36,7 +36,8 @@ class PrequalificationController extends Controller
         $CryptController = new CryptController;
         $crypt_email = $CryptController->cryptString(Auth::user()->MEMBER_EMAIL);
         $crypt_last_login = $CryptController->cryptString(Auth::user()->MEMBER_LAST_LOGIN);
+        $survey_slug = DB::Connection('SURVEY')->table('SURVEY')->select('SURVEY_SLUG')->where('SURVEY_UUID','642EC694-ABA9-4B99-BCF1-8E695C1386DB')->first();
 
-        return view('prequalification.prequalification-store', compact('crypt_email','crypt_last_login'));
+        return view('prequalification.prequalification-store', compact('crypt_email','crypt_last_login','survey_slug'));
     }
 }

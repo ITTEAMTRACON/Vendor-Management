@@ -8,13 +8,14 @@ use App\Http\Requests\Auth\CryptRequest;
 use Auth;
 use DB;
 use App\Http\Controllers\CryptController;
+use App\Models\SESSION;
 
 
 class PrequalificationController extends Controller
 {
     function index(){
 
-        $session = DB::Connection('SURVEY')->table('SESSION')->where('SESSION_USER_ID',Auth::user()->MEMBER_UUID)->where('SESSION_SURVEY_UUID','642EC694-ABA9-4B99-BCF1-8E695C1386DB')->get();
+        $session = SESSION::where('SESSION_USER_ID',Auth::user()->MEMBER_UUID)->where('SESSION_SURVEY_UUID','642EC694-ABA9-4B99-BCF1-8E695C1386DB')->get();
 
 
         return view('prequalification.prequalification', compact('session'));
@@ -35,7 +36,8 @@ class PrequalificationController extends Controller
         $CryptController = new CryptController;
         $crypt_email = $CryptController->cryptString(Auth::user()->MEMBER_EMAIL);
         $crypt_last_login = $CryptController->cryptString(Auth::user()->MEMBER_LAST_LOGIN);
+        $survey_slug = DB::Connection('SURVEY')->table('SURVEY')->select('SURVEY_SLUG')->where('SURVEY_UUID','642EC694-ABA9-4B99-BCF1-8E695C1386DB')->first();
 
-        return view('prequalification.prequalification-store', compact('crypt_email','crypt_last_login'));
+        return view('prequalification.prequalification-store', compact('crypt_email','crypt_last_login','survey_slug'));
     }
 }

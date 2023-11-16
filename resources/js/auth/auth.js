@@ -1,20 +1,27 @@
 document.addEventListener("DOMContentLoaded", () => {
     if(window.location.hash=='#sign-up'){
         form_sign_up_show()
+    }else if(window.location.hash=='#forget-password'){
+        form_forget_password_show()
     }
 });
 
 try{
     document.getElementById("btn_sign_in").addEventListener("click", form_sign_in_show);
+    document.getElementById("btn_sign_in_2").addEventListener("click", form_sign_in_show);
+    
 }catch (error){
 
 }
 function form_sign_in_show(){
-    document.getElementById("login_form").classList.toggle('hide')
-    document.getElementById("register_form").classList.toggle('hide')
+    document.getElementById("login_form").classList.remove('hide')
+    document.getElementById("register_form").classList.add('hide')
+    document.getElementById("forget_password_form").classList.add('hide')
+
     setTimeout(() => {
-        document.getElementById("login_form").classList.toggle('hidden')
-        document.getElementById("register_form").classList.toggle('hidden')
+        document.getElementById("login_form").classList.remove('hidden')
+        document.getElementById("register_form").classList.add('hidden')
+        document.getElementById("forget_password_form").classList.add('hidden')
     },1000)
 }
 
@@ -24,11 +31,34 @@ try{
 
 }
 function form_sign_up_show(){
-    document.getElementById("login_form").classList.toggle('hide')
-    document.getElementById("register_form").classList.toggle('hide')
+    document.getElementById("login_form").classList.add('hide')
+    document.getElementById("register_form").classList.remove('hide')
+    document.getElementById("forget_password_form").classList.add('hide')
     setTimeout(() => {
-        document.getElementById("login_form").classList.toggle('hidden')
-        document.getElementById("register_form").classList.toggle('hidden')
+        document.getElementById("login_form").classList.add('hidden')
+        document.getElementById("register_form").classList.remove('hidden')
+        document.getElementById("forget_password_form").classList.add('hidden')
+    },500)
+
+
+}
+
+try{
+    document.getElementById("btn_forget_password").addEventListener("click", form_forget_password_show);
+    document.getElementById("btn_forget_password_2").addEventListener("click", form_forget_password_show);
+}catch (error){
+
+}
+
+function form_forget_password_show(){
+    console.log('test')
+    document.getElementById("login_form").classList.add('hide')
+    document.getElementById("register_form").classList.add('hide')
+    document.getElementById("forget_password_form").classList.remove('hide')
+    setTimeout(() => {
+        document.getElementById("login_form").classList.add('hidden')
+        document.getElementById("register_form").classList.add('hidden')
+        document.getElementById("forget_password_form").classList.remove('hidden')
     },500)
 
 

@@ -53,8 +53,8 @@
                 <br>
                 <button type="submit" id="btn_submit" class="btn btn-success" style="width: 100%">Save</button>
                 <div class="flex items-center gap-4">
-                    <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 4000)"
-                        class="text-sm text-gray-600 dark:text-gray-400" style="color: green">Save Successful</p>
+                    {{-- <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 4000)"
+                        class="text-sm text-gray-600 dark:text-gray-400" style="color: green">Save Successful</p> --}}
                     @if (session('success'))
                         <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 4000)"
                             class="text-sm text-gray-600 dark:text-gray-400" style="color: green">{{ session('success') }}</p>

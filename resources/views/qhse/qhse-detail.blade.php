@@ -11,7 +11,7 @@
             QHSE Detail
         </header>
 
-        <div class="progress-graph">
+        <div class="progress-graph" hidden>
             @if ($SESSION->SESSION_STATUS == null)
                 <div>
                     <span class="circle active"><span class="title">Proposed</span>

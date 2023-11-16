@@ -28,6 +28,7 @@ Route::get('/', function () {
 
 route::post('/post-login', [LoginUserController::class, 'post_login'])->name('login.post');
 route::post('/post-register', [RegisteredUserController::class, 'store'])->name('register.post');
+route::post('/post-forget-password', [PasswordController::class, 'forget_password'])->name('forget-password.post');
 
 route::get('/register-link/{token}', [RegisteredUserController::class, 'register_link'])->name('register.view');
 route::post('/register-link', [RegisteredUserController::class, 'register_link_store'])->name('register.store');

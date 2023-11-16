@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('QUEUE_CONNECTION', 'sync'),
+    'default' => 'database',
 
     /*
     |--------------------------------------------------------------------------
@@ -36,10 +36,13 @@ return [
 
         'database' => [
             'driver' => 'database',
-            'table' => 'jobs',
+            'host'     => '192.168.1.103',
+            'database' => 'HUMANCAPITAL',
+            'username' => 'sa',
+            'password' => 'kI72P5G2',
+            'table' => 'treesjobsemails',
             'queue' => 'default',
-            'retry_after' => 90,
-            'after_commit' => false,
+           
         ],
 
         'beanstalkd' => [
@@ -75,22 +78,6 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Job Batching
-    |--------------------------------------------------------------------------
-    |
-    | The following options configure the database and table that store job
-    | batching information. These options can be updated to any database
-    | connection and table which has been defined by your application.
-    |
-    */
-
-    'batching' => [
-        'database' => env('DB_CONNECTION', 'mysql'),
-        'table' => 'job_batches',
-    ],
-
-    /*
-    |--------------------------------------------------------------------------
     | Failed Queue Jobs
     |--------------------------------------------------------------------------
     |
@@ -101,9 +88,12 @@ return [
     */
 
     'failed' => [
-        'driver' => env('QUEUE_FAILED_DRIVER', 'database-uuids'),
-        'database' => env('DB_CONNECTION', 'mysql'),
-        'table' => 'failed_jobs',
+        'driver' => 'database',
+        'host'     => '192.168.1.103',
+        'database' => 'HUMANCAPITAL',
+        'username' => 'sa',
+        'password' => 'kI72P5G2',
+        'table' => 'TREESFAILEDJOBSEMAILS',
     ],
 
 ];

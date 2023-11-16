@@ -18,7 +18,7 @@ class AuthenticatedSessionController extends Controller
      */
     public function create(): View
     {
-        $PRODUCTCOMMUNITY = PRODUCTCOMMUNITY::get();
+        $PRODUCTCOMMUNITY = PRODUCTCOMMUNITY::orderby('PC_NAME','asc')->get();
 
         return view('auth.login', compact('PRODUCTCOMMUNITY'));
     }

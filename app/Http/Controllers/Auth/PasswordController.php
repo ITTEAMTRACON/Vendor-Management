@@ -69,4 +69,10 @@ class PasswordController extends Controller
 
     }
 
+    public function reset_password_view(Request $request){
+        $token = $request->token;
+        return view('auth.change-password')->compact('token');
+    }
+
+
 }

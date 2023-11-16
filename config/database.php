@@ -102,6 +102,14 @@ return [
             'prefix'   => '',
         ],
 
+        'HUMANCAPITAL' => [
+            'driver'   => 'sqlsrv',
+            'host'     =>  env('DB_HOST', 'localhost'),
+            'database' => 'HUMANCAPITAL',
+            'username' => 'sa',
+            'password' => env('DB_PASSWORD', ''),
+            'prefix'   => '',
+        ],
         // 'VENDORMANAGEMENT' => [
         //     'driver'   => 'sqlsrv',
         //     'host'     => 'DESKTOP-RSJFGJB',

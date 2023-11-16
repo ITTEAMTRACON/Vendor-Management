@@ -16,11 +16,11 @@
         <br>
         <div class="card">
             <div class="card-body">
-                <table id="example" class="display border" style="width:100%">
+                <table id="example" class="display border hover" style="width:100%">
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Date</th>
+                            <th>QHSE Date</th>
                             <th>Status</th>
                             <th>Status Date</th>
                             <th>Action</th>
@@ -31,7 +31,7 @@
                         @foreach ($session as $row)
                             <tr>
                                 <td>{{ $i++ }}</td>
-                                <td>{{ $row->SESSION_CREATED_AT }}</td>
+                                <td>{{ $row->created_date }}</td>
                                 @if ($row->SESSION_STATUS == null)
                                     <td value="WAITING FOR REVIEW">WAITING FOR REVIEW</td>
                                 @elseif($row->SESSION_STATUS == 'REJECTED')
@@ -43,7 +43,7 @@
                                 @endif
                                 <td>
                                     @if ($row->SESSION_UPDATE_AT == null)
-                                        {{ $row->SESSION_CREATED_AT }}@else{{ $row->SESSION_UPDATE_AT }}
+                                        {{ $row->created_date }}@else{{ $row->updated_date }}
                                     @endif
                                 </td>
                                 <td class="action">

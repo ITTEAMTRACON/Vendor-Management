@@ -28,7 +28,7 @@
                         <input type="password" class="form-control" name="password" placeholder="Password">
                         <button class="btn btn-primary" type="submit" id='login_submit'>Submit</button>
                         <div class="forget-sign-up">
-                            <a href="#">Forget Password?</a>
+                            <a href="#forget-password" id="btn_forget_password">Forget Password?</a>
                             <a href="#sign-up" id="btn_sign_up">Sign Up</a>
                         </div>
                     </form>
@@ -52,7 +52,7 @@
                         onsubmit="submit_disabled(document.getElementById('submit'))">
                         @csrf
                         <input type="text" class="form-control" name="company_name" placeholder="Enter your company name"
-                            value="{{ old('company_name') }}">
+                            value="{{ old('company_name') }}" autocomplete="off" >
                         <x-input-error class="error-message" :messages="$errors->get('company_name')" />
                             
                         <select type="text" class="form-control" name="product_community"
@@ -72,7 +72,7 @@
                         <x-input-error class="error-message" :messages="$errors->get('product_community')" />
 
                         <input type="text" class="form-control" name="product_range" placeholder="Enter product range"
-                            value="{{ old('product_range') }}">
+                            value="{{ old('product_range') }}" autocomplete="off" >
                         <x-input-error class="error-message" :messages="$errors->get('product_range')" />
 
                         <select type="text" class="form-control" name="location" placeholder="Choose location">
@@ -98,11 +98,44 @@
 
                         <button class="btn btn-primary" type="submit" id="submit">Submit</button>
                         <div class="forget-sign-in">
-                            <a href="#">Forget Password?</a>
+                            <a href="#forget-password" id="btn_forget_password_2">Forget Password?</a>
                             <a href="#sign-in" id="btn_sign_in">Sign In</a>
                         </div>
                     </form>
                 </div>
+
+                <div class="card hide hidden" id="forget_password_form">
+                    <div class="card-header-custom">
+                        Forget Password
+                    </div>
+                    <br />
+                    @if (session('error'))
+                        <x-notification.badge-message class="mt-2" messages="{{ session('error') }}" type="danger" />
+                    @elseif(session('success'))
+                        <x-notification.badge-message class="mt-2" messages="{{ session('success') }}" type="success"
+                            style="text-align: center" textAlign="center" />
+                    @endif
+                    {{-- <x-notification.badge-message class="mt-2" messages="Thanks for your register. Please wait until email is confirmed by our admin. We will notify you via email!" type="success"  textAlign="center" /> --}}
+
+
+                    <form method="POST" action="{{ route('forget-password.post') }}"
+                        onsubmit="submit_disabled(document.getElementById('submit'))">
+                        @csrf
+                        
+
+                        <input type="text" class="form-control" name="email_forget_password" placeholder="Email"
+                            value="{{ old('email_forget_password') }}">
+                        <x-input-error class="error-message" :messages="$errors->get('email_forget_password')" />
+
+                        
+
+                        <button class="btn btn-primary" type="submit" id="submit">Submit</button>
+                        <div class="forget-sign-in">
+                            <a href="#sign-in" id="btn_sign_in_2">Sign In</a>
+                        </div>
+                    </form>
+                </div>
+
             </div>
 
         </div>

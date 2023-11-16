@@ -71,7 +71,7 @@ class ProfileController extends Controller
         $contact_person->save();
     
 
-        return redirect()->back()->withInput()->with('status', 'contact-person-updated');
+        return redirect()->back()->withInput()->with('status', 'contact-person-updated')->with('contact-person',true);
     }
 
 

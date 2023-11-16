@@ -5,11 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use DB;
+use App\Models\SESSION;
 
 class QhseController extends Controller
 {
     function index(){
-        $session = DB::Connection('SURVEY')->table('SESSION')->where('SESSION_USER_ID',Auth::user()->MEMBER_UUID)->where('SESSION_SURVEY_UUID','B82A8B0D-05B2-49EE-9222-C51634E1BC9C')->get();
+        $session = SESSION::where('SESSION_USER_ID',Auth::user()->MEMBER_UUID)->where('SESSION_SURVEY_UUID','B82A8B0D-05B2-49EE-9222-C51634E1BC9C')->get();
 
 
         return view('qhse.qhse', compact('session'));

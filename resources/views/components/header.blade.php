@@ -2,7 +2,8 @@
         <div class="headbar row" style="position: relative; opacity: 1">
 
             <div class="title col-md-6">
-                Vendor Management
+                <img src="images/VENOM-SSO-new.png" />  
+                {{-- Vendor Management --}}
             </div>
             <div class="auth col-md-6">
                 <a href="{{ route('login') }}" style="margin-right: 47px">Welcome,
@@ -25,7 +26,7 @@
         <div class="headbar row">
 
             <div class="title col-md-11">
-                Vendor Management
+                <img src="images/VENOM-SSO-new.png" />  
             </div>
             <div class="auth col-md-1">
                 <a href="{{ route('login') }}">Sign In</a>

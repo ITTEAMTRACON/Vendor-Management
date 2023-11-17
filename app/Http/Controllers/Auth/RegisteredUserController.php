@@ -95,7 +95,7 @@ class RegisteredUserController extends Controller
 
             // Auth::login($member);
         });
-        return redirect("/login#sign-up")->with('success','Thanks for your register. Please wait until email is confirmed by our admin. We will notify you via email!');
+        return redirect("/login#sign-in")->with('success','Thanks for your register. Please wait until email is confirmed by our admin. We will notify you via email!');
         // return redirect(RouteServiceProvider::HOME);
     }
 

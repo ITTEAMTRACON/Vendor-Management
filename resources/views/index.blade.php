@@ -853,20 +853,20 @@
 </head>
 
 <body class="antialiased">
-     <!-- Preloader Start -->
-     <div id="preloader-active">
-        <div class="preloader d-flex align-items-center justify-content-center">
-            <div class="preloader-inner position-relative">
-                <div class="preloader-circle"></div>
-                <div class="preloader-img pere-text">
-                    <img src="{{ asset('/images/tracon_logo.jpg') }}" alt="">
-                </div>
+  
+    <div id="wrapper">
+   <!-- Preloader Start -->
+   <div id="preloader-active">
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="preloader-inner position-relative">
+            <div class="preloader-circle"></div>
+            <div class="preloader-img pere-text">
+                <img src="{{ asset('/images/tracon_logo.jpg') }}" alt="" style="display: inline">
             </div>
         </div>
     </div>
-    <!-- Preloader Start -->
-    <div id="wrapper">
-
+</div>
+<!-- Preloader Start -->
         @yield('main_container')
         @yield('modal-content')
 
@@ -875,15 +875,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
 </script>
-<script>
-    // 1. Proloder */
-    $(window).on('load', function () {
-      $('#preloader-active').delay(450).fadeOut('slow');
-      $('body').delay(450).css({
-        'overflow': 'visible'
-      });
-    });
-</script>
+
 @yield('script_js')
 
 </html>

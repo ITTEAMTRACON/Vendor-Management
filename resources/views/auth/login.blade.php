@@ -17,6 +17,9 @@
                     @if (session('error'))
                         <x-notification.badge-message class="mt-2" messages="{{ session('error') }}" type="danger"
                             textAlign="center" />
+                    @elseif(session('success'))
+                        <x-notification.badge-message class="mt-2" messages="{{ session('success') }}" type="success"
+                            style="text-align: center" textAlign="center" />
                     @endif
 
                     <span style="color: red; font-weight: 600">{{ $errors->first('password') }}</span>

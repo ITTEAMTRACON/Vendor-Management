@@ -12,7 +12,8 @@ use Mail;
 use App\Jobs\SendEmailForgetPassword;
 use App\Models\User;
 use Illuminate\Support\Str;
-
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\ValidationException;
 
 
 class PasswordController extends Controller
@@ -63,7 +64,7 @@ class PasswordController extends Controller
 
 
 			// \LogActivity::addToLog( request()->ip(),'Forgot Password','success');
-			return redirect()->back()->withInput()->with('status', 'Success !! Please check your E-mail to update your password.');
+			return redirect()->back()->withInput()->with('success', 'Success !! Please check your E-mail to update your password.');
 		}
 			
 
@@ -71,7 +72,31 @@ class PasswordController extends Controller
 
     public function reset_password_view(Request $request){
         $token = $request->token;
+        $user = USER::where('MEMBER_RESET_CODE',$request->token)->first();
+        if(!$user){
+            return redirect("/login#sign-in")->withInput()->with('error', 'Error !! Token expired ');
+        }
+
         return view('auth.change-password')->compact('token');
+    }
+
+    public function reset_password_store(Request $request){
+        $validator = Validator::make($request->all(), [
+            'password' => ['required','required_with:password_confirmation','same:password_confirmation','min:6'],
+            'password_confirmation' => ['required'],
+        ]);
+
+        if ($validator->fails()) {
+            return back()
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+
+        $user = USER::where('MEMBER_RESET_CODE',$request->token)->update(['MEMBER_PASSWORD'=>bcrypt($request->password), 
+                                                                          'MEMBER_RESET_CODE'=>NULL,
+                                                                          'MEMBER_UPDATED_AT'=>date('Y-m-d H:i:s')]);
+
+        return redirect("/login#sign-in")->withInput()->with('success', 'Success !! Reset password is successfully');
     }
 
 

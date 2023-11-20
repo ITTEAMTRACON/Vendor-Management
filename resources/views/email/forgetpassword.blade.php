@@ -14,7 +14,7 @@
 		You can access this link to reset your password:
 	</h4>
 	<h4>
-		<a href="https://venom.tracon.co.id/reset_password/{{$token}}">Reset Password  (Click Here)</a>
+		<a href="https://venom.tracon.co.id/reset-password/{{$token}}">Reset Password  (Click Here)</a>
 	</h4>
 	<br>
 	<h4>

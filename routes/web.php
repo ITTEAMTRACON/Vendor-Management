@@ -30,7 +30,7 @@ route::post('/post-login', [LoginUserController::class, 'post_login'])->name('lo
 route::post('/post-register', [RegisteredUserController::class, 'store'])->name('register.post');
 route::post('/post-forget-password', [PasswordController::class, 'forget_password'])->name('forget-password.post');
 
-route::post('/reset-password/{token}', [PasswordController::class, 'reset_password_view'])->name('reset-password.view');
+route::get('/reset-password-view/{token}', [PasswordController::class, 'reset_password_view'])->name('reset-password.view');
 route::post('/reset-password-store', [PasswordController::class, 'reset_password_store'])->name('reset-password.store');
 
 route::get('/register-link/{token}', [RegisteredUserController::class, 'register_link'])->name('register.view');

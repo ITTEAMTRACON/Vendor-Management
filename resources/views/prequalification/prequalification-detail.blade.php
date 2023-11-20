@@ -72,7 +72,7 @@
                 {{-- <iframe
                     src="http://localhost:5174/answer-detail/{{ $SESSION->SURVEY_SLUG }}/{{ $crypt_email }}/{{ $crypt_last_login }}/{{ $SESSION_UUID }}"
                     name="iframe" style="width: 100%; height: 100%"></iframe> --}}
-                    name="iframe" style="width: 100%; height: 100%"></iframe> --}}
+                    {{-- name="iframe" style="width: 100%; height: 100%"></iframe> --}}
 
 
             </div>

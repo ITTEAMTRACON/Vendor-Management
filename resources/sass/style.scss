@@ -26,10 +26,14 @@ select {
   width: 100%;
   border-bottom: 1px solid #fff;
   // background: #0D4C84;
-  background: #3e6485;
+  // background: #FFF7E6;
+  background: #FFF0CE;
+
   box-shadow: 0px 2px 20px 1px rgba(0, 0, 0, 0.25);
   padding: 10px;
   margin: auto;
+  z-index: 9999;
+  // opacity: 0.5 !important;
 
   .title {
     margin: 0px 0;
@@ -51,7 +55,7 @@ select {
   .auth {
     margin: 15px 0;
     height: 100%;
-    color: #FFF;
+    color: #0174BE;
     
     font-size: 15px;
     font-style: normal;
@@ -67,22 +71,23 @@ select {
 
 aside,
 .main {
-  border-right: 1px solid #0D4C84;
-  background: #0D4C84;
+  // border-right: 1px solid #0D4C84;
+  background: #fff ;
   width: 13vw;
   height: 100% !important;
   min-height: 100vh;
   max-width: 100% !important;
   color: #fff;
   position: absolute;
+  box-shadow: 0px 20px 15px 5px rgba(0, 0, 0, 0.25);
 
   .menu {
     padding: 15px;
-    border-bottom: 1px solid #fff;
+    // border-bottom: 1px solid #fff;
     // background: rgba(97, 140, 177, 0.8) !important;
-    background: #0D4C84 !important;
-    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
-    color: #FFF;
+    background: #fff  !important;
+    // box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+    color: #0174BE;
     
     font-size: 15px;
     font-style: normal;
@@ -92,10 +97,17 @@ aside,
 
     &.active{
       border-bottom: 1px solid #fff;
-      background: #427D9D !important;
+      background: #FFC436 !important;
       padding-left: 20px;
       font-weight: 800;
+      color: #0174BE;
       // font-size: 18px;
+    }
+    svg{
+      path{
+        fill: #0174BE !important;
+
+      }
     }
   }
 

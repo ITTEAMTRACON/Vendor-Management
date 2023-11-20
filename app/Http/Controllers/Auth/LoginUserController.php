@@ -43,7 +43,7 @@ class LoginUserController extends Controller
             Auth::login($user);
             $user->MEMBER_LAST_LOGIN =  date('Y-m-d H:i:s');
             $user->save();
-            return redirect(RouteServiceProvider::HOME);
+            return redirect("pre-qualification");
         }else{
             throw ValidationException::withMessages([
                 'password' => 'Incorrect email or password',

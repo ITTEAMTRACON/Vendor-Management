@@ -1,5 +1,5 @@
 <aside class="sidebar">
-    <a class="menu {{(request()->is('dashboard*')) ? 'active' : ''}}">
+    {{-- <a class="menu {{(request()->is('dashboard*')) ? 'active' : ''}}">
         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" >
             <g clip-path="url(#clip0_6_195)">
                 <path
@@ -13,7 +13,7 @@
             </defs>
         </svg>
         Dashboard
-    </a>
+    </a> --}}
     <a class="menu {{(request()->is('profile*')) ? 'active' : ''}}" href="{{route('profile.index')}}">
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" >
             <g clip-path="url(#clip0_20_368)">

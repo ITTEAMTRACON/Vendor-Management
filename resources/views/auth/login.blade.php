@@ -142,4 +142,7 @@
             </div>
 
         </div>
+        <script>
+            document.body.classList.add('overflow-hidden');
+        </script>
     @endsection

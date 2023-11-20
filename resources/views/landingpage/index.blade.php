@@ -1,7 +1,8 @@
 @extends('index')
-@include('components.header-landingpage')
 @section('main_container')
     @vite(['resources/sass/landingpage/landingpage.scss'])
+    @include('components.header-landingpage')
+
     <form class="carousels">
         <input type="radio" name="fancy" autofocus value="clubs" id="clubs" checked />
         <input type="radio" name="fancy" value="hearts" id="hearts" />
@@ -16,6 +17,7 @@
     </form>
     <script>
         const elements = document.querySelectorAll('input[type="radio"]');
+        document.body.classList.add('overflow-hidden');
 
         function looping() {
             setTimeout((element) => {
@@ -25,12 +27,12 @@
                         checkedIndices.push(index);
                     }
                 });
-                if(checkedIndices[0]+1 > 3){
+                if (checkedIndices[0] + 1 > 3) {
                     elements[0].checked = true;
-                }else{
-                    elements[checkedIndices[0]+1].checked = true;
+                } else {
+                    elements[checkedIndices[0] + 1].checked = true;
                 }
-                
+
                 looping()
             }, 5000);
         }

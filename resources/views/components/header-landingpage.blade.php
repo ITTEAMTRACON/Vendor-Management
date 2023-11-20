@@ -1,5 +1,5 @@
     @if (Auth::check())
-        <div class="headbar row" style="position: relative; opacity: 1">
+        <div class="headbar row" style="position: relative; opacity: 1; background: #FFF7E6;">
 
             <div class="title col-md-6">
                 <img src="images/VENOM-SSO-new.png" />  
@@ -23,7 +23,7 @@
             </div>
         </div>
     @else
-        <div class="headbar row">
+        <div class="headbar row" style="background: #FFF7E6;">
 
             <div class="title col-md-11">
                 <img src="images/VENOM-SSO-new.png" />  

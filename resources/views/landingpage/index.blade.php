@@ -1,5 +1,5 @@
 @extends('index')
-@include('components.header')
+@include('components.header-landingpage')
 @section('main_container')
     @vite(['resources/sass/landingpage/landingpage.scss'])
     <form class="carousels">
@@ -34,6 +34,6 @@
                 looping()
             }, 5000);
         }
-        looping()
+        // looping()
     </script>
 @endsection

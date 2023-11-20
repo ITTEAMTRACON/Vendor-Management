@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="header">
-                    VENDOR MANAGEMENT
+                    <img src="images/VENOM-SSO-new.png" />  
                 </div>
             </div>
             <div class="col-md-4 form-auth">

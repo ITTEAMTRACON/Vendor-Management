@@ -2,7 +2,7 @@
         <div class="headbar row" style="position: relative; opacity: 1">
 
             <div class="title col-md-6">
-                <img src="images/VENOM-SSO-new.png" />  
+                <img src="/images/VENOM-SSO-new.png" />  
                 {{-- Vendor Management --}}
             </div>
             <div class="auth col-md-6">

@@ -40,7 +40,7 @@ class RegisteredUserController extends Controller
             'product_range' => ['required', 'string', 'max:255'],
             'location' => ['required', 'string', 'max:255'],
             'register_email' => ['required', 'string', 'email', 'max:255'],
-            'register_password' => ['required','required_with:register_password_confirmation','same:register_password_confirmation'],
+            'register_password' => ['required','min:8','required_with:register_password_confirmation','same:register_password_confirmation'],
             'register_password_confirmation' => ['required'],
         ]);
 

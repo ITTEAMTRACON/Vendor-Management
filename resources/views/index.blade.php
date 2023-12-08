@@ -878,3 +878,4 @@
 @yield('script_js')
 
 </html>
+ 

@@ -25,8 +25,8 @@ class LoginUserController extends Controller
             'email' => ['required', 'string', 'email', 'max:255'],
             'password' => ['required', 'string', 'max:6'],
         ]);
-
         $user = User::join('VENDORMANAGEMENT.dbo.VENDOR as VENDOR','VENDOR.VM_MEMBER_UUID','=','MEMBER_UUID')->where("MEMBER_EMAIL",$request->email)->where("MEMBER_STATUS",1)->first();
+        
         if(empty($user)){
             $user = User::where("MEMBER_EMAIL",$request->email)->where("MEMBER_STATUS",NULL)->first();
             if(!empty($user)){

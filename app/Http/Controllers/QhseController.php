@@ -10,7 +10,7 @@ use App\Models\SESSION;
 class QhseController extends Controller
 {
     function index(){
-        $session = SESSION::where('SESSION_USER_ID',Auth::user()->MEMBER_UUID)->where('SESSION_SURVEY_UUID','B82A8B0D-05B2-49EE-9222-C51634E1BC9C')->get();
+        $session = SESSION::where('SESSION_USER_ID',Auth::user()->MEMBER_UUID)->where('SESSION_SURVEY_UUID','8B6D8C19-BC3C-4DBF-83B5-88CE89C8D892')->get();
 
 
         return view('qhse.qhse', compact('session'));
@@ -32,7 +32,7 @@ class QhseController extends Controller
         $CryptController = new CryptController;
         $crypt_email = $CryptController->cryptString(Auth::user()->MEMBER_EMAIL);
         $crypt_last_login = $CryptController->cryptString(Auth::user()->MEMBER_LAST_LOGIN);
-        $survey_slug = DB::Connection('SURVEY')->table('SURVEY')->select('SURVEY_SLUG')->where('SURVEY_UUID','B82A8B0D-05B2-49EE-9222-C51634E1BC9C')->first();
+        $survey_slug = DB::Connection('SURVEY')->table('SURVEY')->select('SURVEY_SLUG')->where('SURVEY_UUID','8B6D8C19-BC3C-4DBF-83B5-88CE89C8D892')->first();
         return view('qhse.qhse-store', compact('crypt_email','crypt_last_login','survey_slug'));
     }
 }

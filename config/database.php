@@ -50,7 +50,7 @@ return [
             'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', 'forge'),
             'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'password' => env('DB_MSSQL_PASSWORD','kI72P5G2'),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
@@ -70,7 +70,7 @@ return [
             'port' => env('DB_PORT', '5432'),
             'database' => env('DB_DATABASE', 'forge'),
             'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'password' => env('DB_MSSQL_PASSWORD','kI72P5G2'),
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
@@ -85,7 +85,7 @@ return [
             'port' => env('DB_PORT', '1433'),
             'database' => env('DB_DATABASE', 'forge'),
             'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'password' => env('DB_MSSQL_PASSWORD','kI72P5G2'),
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
@@ -95,19 +95,19 @@ return [
 
         'VENDORMANAGEMENT' => [
             'driver'   => 'sqlsrv',
-            'host'     =>  env('DB_HOST', 'localhost'),
+            'host'     =>  env('DB_MSSQL_HOST', '192.168.1.103\SQLEXP2014'),
             'database' => 'VENDORMANAGEMENT',
-            'username' => 'sa',
-            'password' => env('DB_PASSWORD', ''),
+            'username' => env('DB_MSSQL_USERNAME','sa'),
+            'password' => env('DB_MSSQL_PASSWORD','kI72P5G2'),
             'prefix'   => '',
         ],
 
         'HUMANCAPITAL' => [
             'driver'   => 'sqlsrv',
-            'host'     =>  env('DB_HOST', 'localhost'),
+            'host'     =>  env('DB_MSSQL_HOST', '192.168.1.103\SQLEXP2014'),
             'database' => 'HUMANCAPITAL',
-            'username' => 'sa',
-            'password' => env('DB_PASSWORD', ''),
+            'username' => env('DB_MSSQL_USERNAME','sa'),
+            'password' => env('DB_MSSQL_PASSWORD','kI72P5G2'),
             'prefix'   => '',
         ],
         // 'VENDORMANAGEMENT' => [
@@ -122,10 +122,10 @@ return [
 
         'SURVEY' => [
             'driver'   => 'sqlsrv',
-            'host'     =>  env('DB_HOST', 'localhost'),
+            'host'     =>  env('DB_MSSQL_HOST', '192.168.1.103\SQLEXP2014'),
             'database' => 'SURVEY',
-            'username' => 'sa',
-            'password' => env('DB_PASSWORD', ''),
+            'username' => env('DB_MSSQL_USERNAME','sa'),
+            'password' => env('DB_MSSQL_PASSWORD','kI72P5G2'),
             'prefix'   => '',
         ]
 

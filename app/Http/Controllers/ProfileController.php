@@ -20,7 +20,7 @@ class ProfileController extends Controller
     public function index(): View
     {   
         $contact_person = CONTACTPERSON::where('CP_VM_ID',Auth::user()->MEMBER_UUID)->first();
-        $product_community = PRODUCTCOMMUNITY::get();
+        $product_community = PRODUCTCOMMUNITY::where('PC_STATUS',1)->get();
 
         return view('profile.profile',[
             'user' => 'user',

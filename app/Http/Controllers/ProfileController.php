@@ -74,6 +74,26 @@ class ProfileController extends Controller
         return redirect()->back()->withInput()->with('status', 'contact-person-updated')->with('contact-person',true);
     }
 
+    public function add_contact_person(ProfileUpdateContactPersonRequest $request): RedirectResponse
+    {
+        CONTACTPERSON::insert([
+            "CP_VM_ID" => Auth::user()->MEMBER_UUID,
+            "CP_NAME" => $request->cp_name,
+            "CP_POSITION" => $request->cp_position,
+            "CP_EMAIL" => $request->cp_email,
+            "CP_PHONE1" => $request->cp_phone,
+            "CP_PHONE2" => $request->cp_mobile_phone,
+            "CP_FAX" => $request->cp_facsimile
+        ]);
+
+        return redirect()->back()->with('status', 'contact-person-added')->with('contact-person',true);
+    }
+
+    public function delete_contact_person(Request $request){
+        $CONTACTPERSON = CONTACTPERSON::find($request->id)->delete();
+
+        return response()->json($CONTACTPERSON, 200);
+    }
 
 
 

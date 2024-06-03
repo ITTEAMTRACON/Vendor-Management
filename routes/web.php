@@ -56,10 +56,16 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/qhse/detail/{SESSION_UUID}', [QhseController::class, 'view'])->name('qhse.detail');
     Route::get('/qhse/store', [QhseController::class, 'store'])->name('qhse.store');
 
+    Route::get('/certificate', [QhseController::class, 'certificateIndex'])->name('certificate.index');
+    Route::get('/certificate/detail/{SESSION_UUID}', [QhseController::class, 'view'])->name('certificate.detail');
+    Route::get('/certificate/store', [QhseController::class, 'certificateStore'])->name('certificate.store');
+
 
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::patch('/profile/contact-person', [ProfileController::class, 'update_contact_person'])->name('profile.update-contact-person');
+    Route::post('/profile/contact-person', [ProfileController::class, 'add_contact_person'])->name('profile.add-contact-person');
+    Route::delete('/profile/contact-person/{id}', [ProfileController::class, 'delete_contact_person'])->name('profile.delete-contact-person');
     // Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

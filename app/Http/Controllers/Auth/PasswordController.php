@@ -77,10 +77,11 @@ class PasswordController extends Controller
             return redirect("/login#sign-in")->withInput()->with('error', 'Error !! Token expired ');
         }
 
-        return view('auth.change-password')->compact('token');
+        return view('auth.reset-password', compact('token'));
     }
 
     public function reset_password_store(Request $request){
+        // dd(Request()->All());
         $validator = Validator::make($request->all(), [
             'password' => ['required','required_with:password_confirmation','same:password_confirmation','min:6'],
             'password_confirmation' => ['required'],

@@ -25,8 +25,8 @@ class LoginUserController extends Controller
             'email' => ['required', 'string', 'email', 'max:255'],
             'password' => ['required', 'string', 'max:6'],
         ]);
-        $user = User::join('VENDORMANAGEMENT.dbo.VENDOR as VENDOR','VENDOR.VM_MEMBER_UUID','=','MEMBER_UUID')->where("MEMBER_EMAIL",$request->email)->where("MEMBER_STATUS",1)->first();
-        
+        $user = User::leftjoin('VENDORMANAGEMENT.dbo.VENDOR as VENDOR','VENDOR.VM_MEMBER_UUID','=','MEMBER_UUID')->where("MEMBER_EMAIL",$request->email)->where("MEMBER_STATUS",1)->first();
+        // dd($request->email, $user);
         if(empty($user)){
             $user = User::where("MEMBER_EMAIL",$request->email)->where("MEMBER_STATUS",NULL)->first();
             if(!empty($user)){
@@ -38,7 +38,7 @@ class LoginUserController extends Controller
                 return back()->with('error','Sorry! Your account was rejected');
             }
         }
-        // dd($user);
+
         if ($user && Hash::check($request->password, $user->MEMBER_PASSWORD)  ) {
             Auth::login($user);
             $user->MEMBER_LAST_LOGIN =  date('Y-m-d H:i:s');

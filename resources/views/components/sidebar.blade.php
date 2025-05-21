@@ -61,7 +61,7 @@
         </div>
         <div class="sub-menu {{ request()->is('qhse*') ? 'active' : '' }}">
             <a href="{{ route('qhse.index') }}">
-                Quitionare
+                Questionnaire
             </a>
         </div>
 

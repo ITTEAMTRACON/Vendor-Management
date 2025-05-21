@@ -36,12 +36,12 @@ return [
 
         'database' => [
             'driver' => 'database',
-            'host'     => '192.168.1.217',
-            'connection'=> 'HUMANCAPITAL',
-            'database' => 'HUMANCAPITAL',
+            'host'     => '192.168.1.103',
+            'connection'=> 'VENDORMANAGEMENT',
+            'database' => 'VENDORMANAGEMENT',
             'username' => 'sa',
-            'password' => 'p@55wd!@!',
-            'table' => 'TREESJOBSEMAILS',
+            'password' => 'kI72P5G2',
+            'table' => 'JOBS',
             'queue' => 'default',
            
         ],
